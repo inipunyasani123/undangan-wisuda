@@ -1,0 +1,67 @@
+@import "tailwindcss";
+
+/* ============================================================
+   TEMA WISUDA — Academic Program (navy & emas)
+   Konsep buku program: formal, ijazah-like, ber-rundown.
+   ============================================================ */
+@theme {
+  --color-cream: #f7f4ec;
+  --color-blush: #ece6d8;
+  --color-rose: #b08d4f;
+  --color-rose-deep: #1e2a4a;
+  --color-gold: #c9a86a;
+  --color-ink: #182238;
+  --color-muted: #6f7689;
+
+  --font-display: var(--font-cinzel), Georgia, serif;
+  --font-script: var(--font-garamond), Georgia, serif;
+  --font-body: var(--font-garamond), Georgia, serif;
+}
+
+html { scroll-behavior: smooth; overflow-x: hidden; }
+
+body {
+  background-color: var(--color-cream);
+  color: var(--color-ink);
+  font-family: var(--font-body);
+  overflow-x: hidden;
+}
+
+.font-display { font-family: var(--font-display); letter-spacing: 0.04em; }
+.font-script { font-family: var(--font-script); font-style: italic; }
+
+/* Aturan garis emas tipis dgn titik tengah (khas dokumen formal) */
+.gold-rule {
+  display: flex; align-items: center; justify-content: center; gap: 0.5rem;
+  color: var(--color-gold);
+}
+.gold-rule::before, .gold-rule::after {
+  content: ""; height: 1px; width: 3rem; background: currentColor; opacity: 0.6;
+}
+
+/* Teks gradien emas (porting Stitch "Academic Honor") */
+.gold-gradient {
+  background: linear-gradient(135deg, #d8b25a 0%, #f0d486 50%, #b08d4f 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: var(--color-blush); }
+::-webkit-scrollbar-thumb { background: var(--color-rose); border-radius: 4px; }
+
+@keyframes floaty { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+.animate-floaty { animation: floaty 6s ease-in-out infinite; }
+
+:focus-visible { outline: 2px solid var(--color-rose-deep); outline-offset: 2px; border-radius: 4px; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
