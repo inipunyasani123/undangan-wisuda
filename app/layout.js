@@ -19,7 +19,7 @@ const garamond = EB_Garamond({
 const __jsonld = {"@context":"https://schema.org","@type":"Event","name":"Wisuda Dimas Prasetyo","description":"Undangan wisuda digital"};
 
 export const metadata = {
-  metadataBase: new URL("https://undangan-wisuda.vercel.app"),
+  metadataBase: new URL("https://wisuda.pintuweb.com"),
   title: "Undangan Wisuda Digital — Dimas Prasetyo",
   description: "Undangan syukuran wisuda digital yang elegan. Bagikan kebanggaan kelulusan dan undang orang tersayang untuk merayakannya.",
   applicationName: "Undangan Digital",
@@ -27,11 +27,11 @@ export const metadata = {
   authors: [{ name: "Undangan Digital" }],
   creator: "Undangan Digital",
   publisher: "Undangan Digital",
-  alternates: { canonical: "https://undangan-wisuda.vercel.app" },
+  alternates: { canonical: "https://wisuda.pintuweb.com" },
   openGraph: {
     type: "website",
     locale: "id_ID",
-    url: "https://undangan-wisuda.vercel.app",
+    url: "https://wisuda.pintuweb.com",
     siteName: "Undangan Digital",
     title: "Undangan Wisuda Digital — Dimas Prasetyo",
     description: "Undangan syukuran wisuda digital yang elegan. Bagikan kebanggaan kelulusan dan undang orang tersayang untuk merayakannya.",
