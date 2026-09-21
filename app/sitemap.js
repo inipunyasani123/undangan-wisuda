@@ -1,5 +1,5 @@
 export default function sitemap() {
   return [
-    { url: "https://wisuda.pintuweb.com", lastModified: new Date(), changeFrequency: "monthly", priority: 1 },
+    { url: "https://undangan-wisuda-ten.vercel.app", lastModified: new Date(), changeFrequency: "monthly", priority: 1 },
   ];
 }
