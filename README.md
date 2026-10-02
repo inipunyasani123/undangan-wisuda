@@ -1,31 +1,54 @@
-# Undangan Digital — Wisuda (Academic Program)
+# Undangan Wisuda — Dimas Prasetyo, S.Kom.
+
+Program akademik navy & emas: sampul berlambang, perjalanan pendidikan, kartu pencapaian, susunan acara wisuda, dan ucapan selamat.
 
 **Demo live:** https://undangan-wisuda-ten.vercel.app
 
 ![Tangkapan layar](public/og.jpg)
 
-> Undangan contoh dengan data fiktif. Formulir ucapan hanya demo dan tidak menyimpan data.
+> Contoh dengan data fiktif: nama, tempat, dan nomor rekening tidak sungguhan. Formulir hanya demo dan mengatakannya terus terang. Foto adalah placeholder berlabel yang siap diganti.
 
-Konsep **buku program akademik** yang formal — struktur & komponennya beda dari varian lain:
+## Fitur
 
-- **Cover** — seal/lambang akademik (`Crest`), nama + gelar, latar navy
-- **Hero** — foto toga berbingkai formal, gelar & universitas
-- **Quote** — kata syukur
-- **AcademicJourney** — timeline **riwayat pendidikan** (SD→S1)
-- **Achievements** — kartu profil akademik (IPK, predikat, fakultas, prodi)
-- **CeremonyProgram** — komponen tanda tangan: **rundown acara wisuda** berwaktu
-- **EventDetails** — detail acara + add to calendar
-- **CountdownTimer**, **Gallery**, **MapEmbed**, **WishesForm** (ucapan selamat), **Footer**
-- **Decorations** — ornamen sudut laurel emas (halus, formal)
+- Sampul berlambang yang menyapa nama tamu (`?to=Nama`)
+- Perjalanan pendidikan & pencapaian
+- Susunan acara, hitung mundur, peta
+- Galeri & ucapan — mode demo
+- **`/kirim` — alat tuan rumah:** ketik daftar tamu, dapatkan tautan pribadi tiap tamu dan pesan WhatsApp siap kirim. Semua diproses di peramban (localStorage), tanpa server.
+- Musik latar dengan tombol putar/jeda (judul lagu tampil di tombol dan footer)
+- Halaman 404 bergaya sendiri
 
-Tema **navy & emas**, font **Cinzel** (engraved seperti ijazah) + **EB Garamond**. Responsif terverifikasi (320/375/768px).
+## Mengganti isi
 
-## Menjalankan
+Seluruh isi ada di satu file: `lib/data.js` (nama, tanggal, acara, galeri, musik, pesan untuk /kirim). Komponen tidak perlu disentuh.
+
+- **Tanggal:** ubah teks tanggal *dan* nilai ISO (`mainDate`, `start`, `end`) — hitung mundur dan tombol kalender memakai nilai ISO.
+- **Peta:** contoh menunjuk area kota; ganti `q=` di `location.mapEmbed` dan `mapLink` dengan nama tempat atau koordinat.
+- **Foto:** timpa berkas di `public/images/` dengan nama yang sama (potret 3:4).
+- **Musik:** timpa `public/music/latar.mp3`, lalu ubah `music.title` dan `music.credit`. Pastikan Anda berhak memakai lagunya.
+
+## Gambar & kredit
+
+- `public/images/*.webp` — placeholder berlabel buatan sendiri (bukan foto stok), digambar ulang dari SVG agar tidak bergantung pada layanan luar.
+- `public/music/latar.mp3` — *Pomp and Circumstance March No. 1 — Edward Elgar*, rekaman US Marine Band, domain publik — [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:ELGAR_Pomp_and_Circumstance_in_D,_Opus_39,_No._1_-_United_States_Marine_Band.mp3). Diperkecil ke MP3 mono 80 kbps.
+
+## Teknologi
+
+- Next.js 15.5 (App Router) dan React 19
+- Tailwind CSS v4 (token tema di `app/globals.css`)
+- Framer Motion, lucide-react
+- Font: Cinzel, EB Garamond (next/font)
+- SEO: metadata, Open Graph, JSON-LD (WebSite), sitemap.xml, robots.txt
+
+## Menjalankan secara lokal
+
 ```bash
-npm install && npm run dev
+npm install
+npm run dev
 ```
-Semua konten di **`lib/data.js`** (objek `graduate`, `journey`, `achievements`, `program`, `event`).
+
+Buka http://localhost:3000 — coba juga http://localhost:3000/?to=Nama+Tamu dan http://localhost:3000/kirim.
 
 ---
 
-Bagian dari koleksi 8 undangan digital di [PortalUndangan](https://portal-undangan-eta.vercel.app). Dibuat oleh [PintuWeb](https://pintuweb.com), jasa pembuatan website.
+Bagian dari koleksi 8 undangan digital di [PortalUndangan](https://portal-undangan-eta.vercel.app). Dibuat oleh [PintuWeb](https://www.pintuweb.com), jasa pembuatan website.

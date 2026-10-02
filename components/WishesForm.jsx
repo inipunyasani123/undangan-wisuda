@@ -29,10 +29,10 @@ export default function WishesForm() {
         <SectionHeading kicker="Doa & Harapan" title="Ucapan Selamat" />
         <Reveal className="mt-12">
           <form onSubmit={submit} className="space-y-4">
-            <input value={form.name} onChange={(e) => setForm({ ...form, name: e.target.value })} placeholder="Nama Anda" className={field} required />
-            <textarea value={form.message} onChange={(e) => setForm({ ...form, message: e.target.value })} placeholder="Tulis ucapan selamat..." rows={3} className={`${field} resize-none`} required />
+            <input aria-label="Nama Anda" value={form.name} onChange={(e) => setForm({ ...form, name: e.target.value })} placeholder="Nama Anda" className={field} required />
+            <textarea aria-label="Ucapan selamat" value={form.message} onChange={(e) => setForm({ ...form, message: e.target.value })} placeholder="Tulis ucapan selamat..." rows={3} className={`${field} resize-none`} required />
             <button type="submit" className="inline-flex items-center gap-2 bg-rose-deep px-6 py-3 text-xs font-semibold uppercase tracking-[0.15em] text-cream transition hover:bg-ink">
-              <Send size={14} /> Kirim Ucapan
+              <Send size={14} aria-hidden="true" /> Kirim Ucapan
             </button>
           </form>
         </Reveal>
