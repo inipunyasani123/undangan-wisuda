@@ -2,7 +2,7 @@
 
 Program akademik navy & emas: sampul berlambang, perjalanan pendidikan, kartu pencapaian, susunan acara wisuda, dan ucapan selamat.
 
-**Demo live:** https://undangan-wisuda-ten.vercel.app
+**Demo live:** https://undangan-wisuda.pintuweb.id
 
 ![Tangkapan layar](public/og.jpg)
 
