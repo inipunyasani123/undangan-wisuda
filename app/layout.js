@@ -16,7 +16,7 @@ const garamond = EB_Garamond({
   display: 'swap',
 });
 
-const __jsonld = {"@context":"https://schema.org","@type":"WebSite","name":"Undangan Wisuda Digital — Dimas Prasetyo, S.Kom.","description":"Contoh undangan wisuda digital bergaya program akademik: perjalanan pendidikan, pencapaian, susunan acara, ucapan, dan musik latar.","inLanguage":"id"};
+const __jsonld = {"@context":"https://schema.org","@type":"WebSite","name":"Undangan Wisuda Digital — Dimas Prasetyo, S.Kom.","url":"https://undangan-wisuda.pintuweb.id","description":"Contoh undangan wisuda digital bergaya program akademik: perjalanan pendidikan, pencapaian, susunan acara, ucapan, dan musik latar.","inLanguage":"id"};
 
 export const metadata = {
   metadataBase: new URL("https://undangan-wisuda.pintuweb.id"),

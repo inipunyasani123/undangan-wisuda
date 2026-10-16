@@ -42,7 +42,7 @@ export default function Footer() {
           </p>
         )}
         <p className="mt-2 text-xs text-cream/80">
-          <Link href="/kirim" className="underline underline-offset-4 hover:text-gold">Kirim undangan ke tamu</Link>
+          <Link href="/kirim" className="inline-block py-2 underline underline-offset-4 hover:text-gold">Kirim undangan ke tamu</Link>
         </p>
       </Reveal>
     </footer>

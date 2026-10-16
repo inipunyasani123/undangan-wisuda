@@ -6,11 +6,13 @@ import { X } from 'lucide-react';
 import Reveal from './ui/Reveal';
 import SectionHeading from './ui/SectionHeading';
 import config from '@/lib/data';
+import { useDialog } from '@/lib/hooks';
 
 // Galeri foto formal + lightbox.
 export default function Gallery() {
   const { gallery } = config;
   const [active, setActive] = useState(null);
+  const tombolTutup = useDialog(active !== null, () => setActive(null));
 
   return (
     <section className="relative z-10 px-6 py-20">
@@ -20,11 +22,12 @@ export default function Gallery() {
           {gallery.map((src, i) => (
             <Reveal key={src} delay={(i % 3) * 0.1}>
               <button
-                onClick={() => setActive(src)}
+                type="button"
+                onClick={() => setActive(i)}
                 className="group relative block h-44 w-full overflow-hidden border-2 border-gold/40 md:h-60"
                 aria-label={`Perbesar foto ${i + 1}`}
               >
-                <Image src={src} alt={`Galeri ${i + 1}`} fill sizes="(max-width:768px) 50vw, 33vw" className="object-cover transition duration-500 group-hover:scale-110" />
+                <Image src={src} alt={`Galeri ${i + 1}`} fill sizes="(max-width:768px) 45vw, 290px" className="object-cover transition duration-500 group-hover:scale-110" />
               </button>
             </Reveal>
           ))}
@@ -32,13 +35,13 @@ export default function Gallery() {
       </div>
 
       <AnimatePresence>
-        {active && (
+        {active !== null && (
           <motion.div
             className="fixed inset-0 z-50 flex items-center justify-center bg-ink/90 p-4"
             initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
-            onClick={() => setActive(null)} role="dialog" aria-modal="true"
+            onClick={() => setActive(null)} role="dialog" aria-modal="true" aria-label={`Galeri ${active + 1} dari ${gallery.length}, diperbesar`}
           >
-            <button className="absolute right-5 top-5 text-cream" onClick={() => setActive(null)} aria-label="Tutup">
+            <button ref={tombolTutup} type="button" className="absolute right-3 top-3 flex h-11 w-11 items-center justify-center text-cream hover:text-gold" onClick={() => setActive(null)} aria-label="Tutup foto">
               <X size={28} />
             </button>
             <motion.div
@@ -46,7 +49,7 @@ export default function Gallery() {
               initial={{ scale: 0.9 }} animate={{ scale: 1 }} exit={{ scale: 0.9 }}
               onClick={(e) => e.stopPropagation()}
             >
-              <Image src={active} alt="Foto" fill sizes="100vw" className="object-contain" />
+              <Image src={gallery[active]} alt={`Galeri ${active + 1}`} fill sizes="(max-width: 768px) 100vw, 672px" className="object-contain" />
             </motion.div>
           </motion.div>
         )}

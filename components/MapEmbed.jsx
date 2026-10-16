@@ -11,11 +11,14 @@ export default function MapEmbed() {
       <div className="mx-auto max-w-3xl">
         <SectionHeading kicker="Lokasi" title="Tempat Acara" />
         <Reveal className="mt-12">
-          <div className="overflow-hidden border-4 border-rose-deep">
+          <div className="relative overflow-hidden border-4 border-rose-deep bg-blush">
+            <p className="absolute inset-0 flex items-center justify-center gap-2 text-xs uppercase tracking-[0.2em] text-muted" aria-hidden="true">
+              <MapPin size={15} /> Memuat peta…
+            </p>
             <iframe
               src={location.mapEmbed}
               title="Peta lokasi acara"
-              className="h-72 w-full border-0"
+              className="relative h-72 w-full border-0"
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
               allowFullScreen

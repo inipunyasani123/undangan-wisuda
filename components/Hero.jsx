@@ -3,14 +3,15 @@ import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { ChevronDown } from 'lucide-react';
 import config from '@/lib/data';
+import { tanggalWIB } from '@/lib/utils';
 
 // Hero: foto wisudawan dgn bingkai formal, nama + gelar + universitas.
 export default function Hero() {
   const { graduate, mainDate } = config;
-  const dateLabel = new Date(mainDate).toLocaleDateString('id-ID', { day: 'numeric', month: 'long', year: 'numeric' });
+  const dateLabel = tanggalWIB(mainDate, { day: 'numeric', month: 'long', year: 'numeric' });
 
   return (
-    <section className="relative z-10 flex min-h-screen flex-col items-center justify-center px-6 py-24 text-center">
+    <section className="relative z-10 flex min-h-svh flex-col items-center justify-center px-6 py-24 text-center">
       <motion.div
         initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.9 }}
         className="relative"

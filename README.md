@@ -15,7 +15,7 @@ Program akademik navy & emas: sampul berlambang, perjalanan pendidikan, kartu pe
 - Susunan acara, hitung mundur, peta
 - Galeri & ucapan — mode demo
 - **`/kirim` — alat tuan rumah:** ketik daftar tamu, dapatkan tautan pribadi tiap tamu dan pesan WhatsApp siap kirim. Semua diproses di peramban (localStorage), tanpa server.
-- Musik latar dengan tombol putar/jeda (judul lagu tampil di tombol dan footer)
+- Musik latar: tamu memilih nyala/mati lewat sakelar di sampul; baru diputar setelah undangan dibuka, lalu bisa dijeda lewat tombol mengambang (judul lagu tampil di tombol dan footer)
 - Halaman 404 bergaya sendiri
 
 ## Mengganti isi
