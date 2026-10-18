@@ -18,7 +18,7 @@ export default function Hero() {
       >
         <div className="absolute -inset-3 border border-gold/50" aria-hidden="true" />
         <div className="relative h-72 w-60 overflow-hidden border-4 border-rose-deep shadow-xl">
-          <Image src={graduate.photo} alt={graduate.fullName} fill priority sizes="240px" className="object-cover" />
+          <Image src={graduate.photo} alt={graduate.photoAlt || graduate.fullName} fill priority sizes="240px" className="object-cover" />
         </div>
       </motion.div>
 

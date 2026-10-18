@@ -6,7 +6,7 @@ Program akademik navy & emas: sampul berlambang, perjalanan pendidikan, kartu pe
 
 ![Tangkapan layar](public/og.jpg)
 
-> Contoh dengan data fiktif: nama, tempat, dan nomor rekening tidak sungguhan. Formulir hanya demo dan mengatakannya terus terang. Foto adalah placeholder berlabel yang siap diganti.
+> Contoh dengan data fiktif: nama, tempat, dan nomor rekening tidak sungguhan. Formulir hanya demo dan mengatakannya terus terang. Gambar adalah ilustrasi buatan sendiri bergaya gravir yang siap diganti foto asli.
 
 ## Fitur
 
@@ -24,12 +24,12 @@ Seluruh isi ada di satu file: `lib/data.js` (nama, tanggal, acara, galeri, musik
 
 - **Tanggal:** ubah teks tanggal *dan* nilai ISO (`mainDate`, `start`, `end`) — hitung mundur dan tombol kalender memakai nilai ISO.
 - **Peta:** contoh menunjuk area kota; ganti `q=` di `location.mapEmbed` dan `mapLink` dengan nama tempat atau koordinat.
-- **Foto:** timpa berkas di `public/images/` dengan nama yang sama (potret 3:4).
+- **Foto:** timpa berkas di `public/images/` dengan nama yang sama (potret wisudawan 5:6, galeri 3:4), lalu perbarui `alt` di `lib/data.js`.
 - **Musik:** timpa `public/music/latar.mp3`, lalu ubah `music.title` dan `music.credit`. Pastikan Anda berhak memakai lagunya.
 
 ## Gambar & kredit
 
-- `public/images/*.webp` — placeholder berlabel buatan sendiri (bukan foto stok), digambar ulang dari SVG agar tidak bergantung pada layanan luar.
+- `public/images/*.webp` — ilustrasi buatan sendiri bergaya gravir (tinta navy, aksen emas), digambar dari SVG; tokoh dan kampusnya fiktif. Lihat `public/images/SUMBER.md`.
 - `public/music/latar.mp3` — *Pomp and Circumstance March No. 1 — Edward Elgar*, rekaman US Marine Band, domain publik — [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:ELGAR_Pomp_and_Circumstance_in_D,_Opus_39,_No._1_-_United_States_Marine_Band.mp3). Diperkecil ke MP3 mono 80 kbps.
 
 ## Teknologi

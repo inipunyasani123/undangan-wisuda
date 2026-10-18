@@ -19,15 +19,15 @@ export default function Gallery() {
       <div className="mx-auto max-w-4xl">
         <SectionHeading kicker="Dokumentasi" title="Galeri" />
         <div className="mt-12 grid grid-cols-2 gap-3 md:grid-cols-3">
-          {gallery.map((src, i) => (
-            <Reveal key={src} delay={(i % 3) * 0.1}>
+          {gallery.map((foto, i) => (
+            <Reveal key={foto.src} delay={(i % 3) * 0.1}>
               <button
                 type="button"
                 onClick={() => setActive(i)}
                 className="group relative block h-44 w-full overflow-hidden border-2 border-gold/40 md:h-60"
-                aria-label={`Perbesar foto ${i + 1}`}
+                aria-label={`Perbesar foto: ${foto.alt}`}
               >
-                <Image src={src} alt={`Galeri ${i + 1}`} fill sizes="(max-width:768px) 45vw, 290px" className="object-cover transition duration-500 group-hover:scale-110" />
+                <Image src={foto.src} alt={foto.alt} fill sizes="(max-width:768px) 45vw, 290px" className="object-cover transition duration-500 group-hover:scale-110" />
               </button>
             </Reveal>
           ))}
@@ -49,7 +49,7 @@ export default function Gallery() {
               initial={{ scale: 0.9 }} animate={{ scale: 1 }} exit={{ scale: 0.9 }}
               onClick={(e) => e.stopPropagation()}
             >
-              <Image src={gallery[active]} alt={`Galeri ${active + 1}`} fill sizes="(max-width: 768px) 100vw, 672px" className="object-contain" />
+              <Image src={gallery[active].src} alt={gallery[active].alt} fill sizes="(max-width: 768px) 100vw, 672px" className="object-contain" />
             </motion.div>
           </motion.div>
         )}
