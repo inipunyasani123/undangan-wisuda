@@ -13,3 +13,5 @@ Tokoh (wisudawan, orang tua, teman) = ilustrasi buatan sendiri tanpa wajah. Obje
 | `foto-5.webp` | Lampu meja dan tumpukan buku | freestocks.org | CC0 | https://commons.wikimedia.org/wiki/File:Metal_desk_lamp_and_books_pile_(42381074432).jpg |
 
 Kampus, tokoh, dan acaranya fiktif.
+
+30 Okt 2026: wajah pada semua ilustrasi tokoh di proyek ini dihapus (wajah polos tanpa mata, hidung, mulut) agar seragam; pose, warna, dan komposisi tetap. Varian WebP dibuat ulang lewat scripts/static-images.mjs.
